@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Actualités{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1>Nos Actualités</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        {% for article in articles %}
+            
+            <div class="col-4">
+                <div class="border mb-5">
+                    <div class="top">image</div>
+                    <div class="bottom">
+                        <h3 class="mb-4"> {{ article.title }} </h3>
+                        <a href=" {{ path('actus_article', {id:article.id}) }} ">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+</div>
+
+{% endblock %}
