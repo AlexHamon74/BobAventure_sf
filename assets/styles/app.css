@@ -1,3 +1,84 @@
-body {
-    background-color: skyblue;
+/* FONT FIRA SANS POUR LES TITRES */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* FONT POPPINS POUR LE TEXTE ET LES LIENS */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* COULEUR DU SITE */
+.color-1{
+    color: #504B47;
+}
+.color-2{
+    color: #FBD899;
+}
+.color-3{
+    color: #FDF6EA;
+}
+.bg-1{
+    background-color: #504B47;
+}
+.bg-2{
+    background-color: #FBD899;
+}
+.bg-3{
+    background-color: #FDF6EA;
+}
+
+/* STYLE DES TITRE - TEXTES - LIENS */
+h1, h2, h3, h4, h5{
+    font-family: "Fira Sans", sans-serif;
+    font-style: normal;
+}
+    /* STYLE DU TITRE INDEX */
+    .h1-1{
+        font-size: 80px;
+        color: #FDF6EA;
+        font-weight: normal;
+        letter-spacing: 2px;
+    }
+    .h1-2{
+        font-size: 90px;
+        color: #FDF6EA;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    .h1-3{
+        font-size: 50px;
+        color: #FBD899;
+        font-weight: 600;
+    }
+    /* !!!! FAIRE MEDIA QUERRIES POUR LE TITRE INDEX !!!! */
+
+
+p, a{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    /* STYLE LIEN DE LA NAVBAR */
+    .a-nav{
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+/* STYLE DES BOUTONS */
+.btn-1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #FDF6EA;
+    background-color: #504B47;
+    padding: 12px 34px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+
+
+
+
+.header{
+    background-image: url(../img/bgi.png);
+    height: 100vh;
+    background-size: cover;
 }
