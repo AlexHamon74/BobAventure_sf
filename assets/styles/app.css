@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5{
     font-family: "Fira Sans", sans-serif;
     font-style: normal;
 }
+h2{
+    font-size: 50px;
+    font-weight: 700;
+}
     /* STYLE DU TITRE INDEX */
     .h1-1{
         font-size: 80px;
@@ -54,6 +58,11 @@ p, a{
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #504B47;
+}
+p{
+    font-size: 18px;
+    text-align: justify;
 }
     /* STYLE LIEN DE LA NAVBAR */
     .a-nav{
@@ -63,10 +72,20 @@ p, a{
 
 /* STYLE DES BOUTONS */
 .btn-1{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: #FDF6EA;
     background-color: #504B47;
+    padding: 12px 34px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+}
+.btn-2{
+    font-size: 16px;
+    font-weight: 600;
+    color: #504B47;
+    background-color: #FBD899;
     padding: 12px 34px;
     text-transform: uppercase;
     border-radius: 50px;
