@@ -34,7 +34,7 @@ h2{
     font-weight: 700;
 }
 h3{
-    font-size: 35px;
+    font-size: 38px;
     font-weight: 600;
 }
     /* STYLE DU TITRE INDEX */
@@ -104,4 +104,10 @@ p{
     background-image: url(../img/bgi.png);
     height: 100vh;
     background-size: cover;
+}
+.bgi-contact{
+    background-image: url(../img/bgi-contact.png);
+    background-size: cover;
+    height: 600px;
+
 }
