@@ -102,18 +102,21 @@
         <div class="row">
 
             {# CARD A DUPPLIQUER #}
+            {% for article in articles %}
+                
             <div class="col-4">
                 <div class="rounded-2 shadow">
                     <img src="https://www.commeuncamion.com/content/uploads/2023/12/4x4-vintage-insert-mitsubishi-pajero.jpg" alt="" class="w-100 img-fluid rounded-2" style="max-height: 300px">
                     <div class="bg-3 py-4">
-                        <h3 class="p-2 color-1">Titre de l'actu</h3>
-                        <a href="" class="p-2 fs-5 text-decoration-none">En savoir plus -></a>
+                        <h3 class="p-2 color-1"> {{article.title}} </h3>
+                        <a href="{{ path('index_article', {id:article.id}) }}" class="p-2 fs-5 text-decoration-none">En savoir plus -></a>
                     </div>
                     <div class="bg-3 rounded-bottom-2 border-top py-2">
                         <p class="m-0 fs-6 fst-italic px-2">Crée le 01/05/2024</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
         </div>
     </div>

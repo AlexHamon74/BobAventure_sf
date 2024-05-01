@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
         $categories[] = $category;
         }
 
-        for ($i=0; $i<10; $i++){
+        for ($i=0; $i<4; $i++){
             $article = new Article();
             $article->setTitle($generator->realText(25))
                 ->setContent($generator->realTextBetween(1800,2000))
