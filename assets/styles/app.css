@@ -4,6 +4,11 @@
 /* FONT POPPINS POUR LE TEXTE ET LES LIENS */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* 1 rem = 10px */
+html{
+    font-size: 62.5%;
+}
+
 /* COULEUR DU SITE */
 .color-1{
     color: #504B47;
@@ -30,33 +35,43 @@ h1, h2, h3, h4, h5{
     font-style: normal;
 }
 h2{
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 700;
 }
 h3{
-    font-size: 38px;
+    font-size: 3.8rem;
     font-weight: 600;
 }
     /* STYLE DU TITRE INDEX */
     .h1-1{
-        font-size: 80px;
+        font-size: 8rem;
         color: #FDF6EA;
         font-weight: normal;
         letter-spacing: 2px;
     }
     .h1-2{
-        font-size: 90px;
+        font-size: 9rem;
         color: #FDF6EA;
         font-weight: bold;
         letter-spacing: 2px;
     }
     .h1-3{
-        font-size: 50px;
+        font-size: 5rem;
         color: #FBD899;
         font-weight: 600;
     }
-    /* !!!! FAIRE MEDIA QUERRIES POUR LE TITRE INDEX !!!! */
-
+    @media (max-width: 768px) { 
+        .h1-1{
+            font-size: 5rem;
+        }
+        .h1-2{
+            font-size: 6rem;
+        }
+        .h1-3{
+            font-size: 2rem;
+        }
+     }
+    /* ----------------------- */
 
 p, a{
     font-family: "Poppins", sans-serif;
@@ -65,18 +80,25 @@ p, a{
     color: #504B47;
 }
 p{
-    font-size: 18px;
+    font-size: 1.8rem;
     text-align: justify;
 }
     /* STYLE LIEN DE LA NAVBAR */
     .a-nav{
-        font-size: 24px;
+        font-size: 2.4rem;
         font-weight: 600;
+        color: #504B47;
+    }
+    @media (max-width: 768px) {
+        .a-nav{
+            font-size: 1.4rem;
+            color: #FDF6EA;
+        }
     }
 
 /* STYLE DES BOUTONS */
 .btn-1{
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
     color: #FDF6EA;
     background-color: #504B47;
@@ -86,7 +108,7 @@ p{
     text-decoration: none;
 }
 .btn-2{
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
     color: #504B47;
     background-color: #FBD899;
