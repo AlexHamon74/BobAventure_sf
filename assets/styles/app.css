@@ -132,3 +132,9 @@ p{
     background-size: cover;
     height: 600px;
 }
+.bgi-pres{
+    background-image: url(../img/presentation.jpg);
+    background-size: cover;
+    height: 100%;
+
+}
