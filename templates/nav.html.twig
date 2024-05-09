@@ -135,15 +135,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto align-items-center">
+            <ul class="navbar-nav mx-auto align-items-center gap-5">
                 <li class="nav-item">
-                    <a class="nav-link mx-4 a-nav" href=" {{path('index')}} ">Accueil</a>
+                    <a class=" a-nav" href=" {{path('index')}} ">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-4 a-nav" href=" {{path('actus')}} ">Blog</a>
+                    <a class=" a-nav" href=" {{path('actus')}} ">Blog</a>
                 </li>
                 <li class="nav-item d-none d-lg-block">
-                    <a class="nav-link mx-4" href="#">
+                    <a class="" href="#">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="180px" viewBox="0 0 129 80" version="1.1">
                         <defs>
                         <g>
@@ -276,11 +276,32 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-4 a-nav" href="#">Contact</a>
+                    <a class=" a-nav" href="#">Contact</a>
                 </li>
+                {% if app.user == null %}
                 <li class="nav-item">
-                    <a class="nav-link mx-4 a-nav" href=" {{path('app_login')}} ">Login</a>
+                    <a class=" a-nav" href=" {{path('app_login')}} ">Connexion</a>
                 </li>
+                {% endif %}
+
+                {% if app.user %}   
+                <div>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle a-nav " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ app.user.name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item fs-4" href="#">Modifier votre profil</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            {% if 'ROLE_ADMIN' in app.user.roles %}
+                            <li><a class="dropdown-item fs-4" href="">Administration</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            {% endif %}
+                            <li><a class="dropdown-item fs-4" href="{{ path('app_logout') }}">Se deconnecter</a></li>
+                        </ul>
+                    </li>
+                </div>
+                {% endif %}
             </ul>
         </div>
     </div>
