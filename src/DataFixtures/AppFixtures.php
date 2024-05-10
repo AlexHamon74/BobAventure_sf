@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Article;
 use App\Entity\Category;
+use App\Entity\Contact;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -23,6 +24,7 @@ class AppFixtures extends Fixture
     {
         $generator = Factory::create();
         
+        // Catégories 
         $categories= [];
         foreach(self::CATEGORIES as $categoryName){
         $category = new Category();
@@ -32,6 +34,7 @@ class AppFixtures extends Fixture
         $categories[] = $category;
         }
 
+        // Articles
         for ($i=0; $i<4; $i++){
             $article = new Article();
             $article->setTitle($generator->realText(25))
@@ -41,6 +44,7 @@ class AppFixtures extends Fixture
             $manager->persist($article);
         }
 
+        // User avec le rôle par défaut
         $regularUser = new User();
         $regularUser->setEmail("bob@test.com")
             ->setRoles(['ROLE_USER'])
@@ -51,6 +55,7 @@ class AppFixtures extends Fixture
 
         $manager->persist($regularUser);
 
+        // User avec le rôle admin
         $adminUser = new User();
         $adminUser->setEmail('admin@admin.com')
             ->setRoles(['ROLE_ADMIN'])
@@ -60,6 +65,16 @@ class AppFixtures extends Fixture
             ->setBirthdate($generator->dateTimeBetween('-22 years'));
 
         $manager->persist($adminUser);
+
+        // Demande de contact
+        $contact = new Contact();
+        $contact->setName($generator->name())
+            ->setFirstname($generator->firstName())
+            ->setEmail($generator->email())
+            ->setSubject($generator->realText(15))
+            ->setMessage($generator->realTextBetween(200,400));
+
+        $manager->persist($contact);
 
         $manager->flush();
     }
