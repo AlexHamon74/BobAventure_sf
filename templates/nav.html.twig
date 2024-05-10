@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark p-3 bg-transparent" id="headerNav">
     <div class="container-fluid">
-        <a class="navbar-brand d-block d-lg-none" href="#">
+        <a class="navbar-brand d-block d-lg-none" href="{{path('index')}}">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100px" viewBox="0 0 129 80" version="1.1">
                         <defs>
                         <g>
@@ -143,7 +143,7 @@
                     <a class=" a-nav" href=" {{path('actus')}} ">Blog</a>
                 </li>
                 <li class="nav-item d-none d-lg-block">
-                    <a class="" href="#">
+                    <a class="" href="{{path('index')}}">
                       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="180px" viewBox="0 0 129 80" version="1.1">
                         <defs>
                         <g>
@@ -280,7 +280,7 @@
                 </li>
                 {% if app.user == null %}
                 <li class="nav-item">
-                    <a class=" a-nav" href=" {{path('app_login')}} ">Connexion</a>
+                    <a class=" a-nav" href="{{path('app_login')}} ">Connexion</a>
                 </li>
                 {% endif %}
 
@@ -294,7 +294,7 @@
                             <li><a class="dropdown-item" href="#">Modifier votre profil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if 'ROLE_ADMIN' in app.user.roles %}
-                            <li><a class="dropdown-item" href="">Administration</a></li>
+                            <li><a class="dropdown-item" href="#">Administration</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% endif %}
                             <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se deconnecter</a></li>

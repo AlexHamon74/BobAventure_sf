@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4">
   <div class="container">
-    <a class="navbar-brand me-5" href="#">
+    <a class="navbar-brand me-5" href="{{path('index')}}">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80px" viewBox="0 0 129 80" version="1.1">
             <defs>
             <g>
@@ -145,17 +145,17 @@
         {% endif %}
 
         {% if app.user %}
-            <a class="dropdown-toggle a-nav " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="dropdown-toggle a-nav2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ app.user.name }}
             </a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item fs-4" href="#">Modifier votre profil</a></li>
+                <li><a class="dropdown-item" href="#">Modifier votre profil</a></li>
                 <li><hr class="dropdown-divider"></li>
                 {% if 'ROLE_ADMIN' in app.user.roles %}
-                <li><a class="dropdown-item fs-4" href="">Administration</a></li>
+                <li><a class="dropdown-item" href="#">Administration</a></li>
                 <li><hr class="dropdown-divider"></li>
                 {% endif %}
-                <li><a class="dropdown-item fs-4" href="{{ path('app_logout') }}">Se deconnecter</a></li>
+                <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se deconnecter</a></li>
             </ul>
         {% endif %}
       </div>
