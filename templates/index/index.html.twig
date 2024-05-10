@@ -111,7 +111,7 @@
                         <a href="{{ path('index_article', {id:article.id}) }}" class="p-2 fs-5 text-decoration-none">En savoir plus -></a>
                     </div>
                     <div class="bg-3 rounded-bottom-2 border-top py-2">
-                        <p class="m-0 fs-6 fst-italic px-2">Crée le 01/05/2024</p>
+                        <p class="m-0 fs-6 fst-italic px-2">{{ article.publishedAt|date('d/m/Y') }}</p>
                     </div>
                 </div>
             </div>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="mb-4 p-3">
                     <h3 class="mb-4">Via notre formulaire</h3>
-                    <a href="" class="btn-2">Nous-contacter</a>
+                    <a href="{{path('contact')}}" class="btn-2">Nous-contacter</a>
                 </div>
                 <div class="mb-4 p-3">
                     <h3>Par téléphone :</h3>

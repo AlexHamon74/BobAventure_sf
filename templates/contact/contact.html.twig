@@ -4,7 +4,12 @@
 
 {% block body %}
 {% include 'nav2.html.twig' %}
-<div class="container my-5 fs-4">
+
+
+<div class="container my-5">
+    <h1 class="h1">Formulaire de contact</h1>
+    {% include 'flash.html.twig' %}
+    
     {{form(form)}}
 </div>
 

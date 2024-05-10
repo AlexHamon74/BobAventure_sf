@@ -4,11 +4,6 @@
 /* FONT POPPINS POUR LE TEXTE ET LES LIENS */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* 1 rem = 10px */
-html{
-    font-size: 62.5%;
-}
-
 /* COULEUR DU SITE */
 .color-1{
     color: #504B47;
@@ -35,44 +30,44 @@ h1, h2, h3, h4, h5{
     font-style: normal;
 }
 h1{
-    font-size: 5rem;
+    font-size: 50px;
     font-weight: 600;
 }
 h2{
-    font-size: 5rem;
+    font-size: 50px;
     font-weight: 700;
 }
 h3{
-    font-size: 3.8rem;
+    font-size: 38px;
     font-weight: 600;
 }
     /* STYLE DU TITRE INDEX */
     .h1-1{
-        font-size: 8rem;
+        font-size: 80px;
         color: #FDF6EA;
         font-weight: normal;
         letter-spacing: 2px;
     }
     .h1-2{
-        font-size: 9rem;
+        font-size: 90px;
         color: #FDF6EA;
         font-weight: bold;
         letter-spacing: 2px;
     }
     .h1-3{
-        font-size: 5rem;
+        font-size: 50px;
         color: #FBD899;
         font-weight: 600;
     }
     @media (max-width: 768px) { 
         .h1-1{
-            font-size: 5rem;
+            font-size: 50px;
         }
         .h1-2{
-            font-size: 6rem;
+            font-size: 60px;
         }
         .h1-3{
-            font-size: 2rem;
+            font-size: 20px;
         }
      }
     /* ----------------------- */
@@ -84,12 +79,12 @@ p, a{
     color: #504B47;
 }
 p{
-    font-size: 1.8rem;
+    font-size: 18px;
     text-align: justify;
 }
     /* STYLE LIEN DES NAVBARS */
     .a-nav{
-        font-size: 2.4rem;
+        font-size: 24px;
         font-weight: 600;
         color: #504B47;
         text-decoration: none;
@@ -99,19 +94,19 @@ p{
     }
     @media (max-width: 768px) {
         .a-nav{
-            font-size: 1.4rem;
+            font-size: 14px;
             color: #FDF6EA;
         }
     }
     .a-nav2{
-        font-size: 1.6rem;
+        font-size: 16px;
         text-decoration: none;
         color: #504B47;
     }
 
 /* STYLE DES BOUTONS */
 .btn-1{
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
     color: #FDF6EA;
     background-color: #504B47;
@@ -121,7 +116,7 @@ p{
     text-decoration: none;
 }
 .btn-2{
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 600;
     color: #504B47;
     background-color: #FBD899;
