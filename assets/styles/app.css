@@ -89,13 +89,17 @@ p{
         color: #504B47;
         text-decoration: none;
     }
-    .a-nav:hover{
-        border-bottom: #504B47 3px solid;
+    .a-nav-login{
+        background-color: #504B47;
+        color: #FDF6EA;
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: 400;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
         .a-nav{
-            font-size: 14px;
-            color: #FDF6EA;
+            font-size: 18px;
+            padding: 10px;
         }
     }
     .a-nav2{

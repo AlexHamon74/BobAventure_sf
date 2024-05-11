@@ -134,13 +134,13 @@
         <button class="navbar-toggler bg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" fill="color-1">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class=" collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav mx-auto align-items-center gap-5">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto align-items-center gap-4">
                 <li class="nav-item">
-                    <a class=" a-nav" href=" {{path('index')}} ">Accueil</a>
+                    <a class="a-nav" href=" {{path('index')}} ">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class=" a-nav" href=" {{path('actus')}} ">Blog</a>
+                    <a class="a-nav" href=" {{path('actus')}} ">Blog</a>
                 </li>
                 <li class="nav-item d-none d-lg-block">
                     <a class="" href="{{path('index')}}">
@@ -276,22 +276,22 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class=" a-nav" href="{{path('contact')}}">Contact</a>
+                    <a class="a-nav" href="{{path('contact')}}">Contact</a>
                 </li>
                 {% if app.user == null %}
                 <li class="nav-item">
-                    <a class=" a-nav" href="{{path('app_login')}} ">Connexion</a>
+                    <a class="a-nav a-nav-login" href="{{path('app_login')}} ">Connexion</a>
                 </li>
                 {% endif %}
 
                 {% if app.user %}   
                 <div>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle a-nav " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ app.user.name }}
+                        <a class="dropdown-toggle a-nav a-nav-login" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ app.user.firstname }} {{ app.user.name }} 
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Modifier votre profil</a></li>
+                            <li><a class="dropdown-item" href="#">Modifier vos informations</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if 'ROLE_ADMIN' in app.user.roles %}
                             <li><a class="dropdown-item" href="#">Administration</a></li>
