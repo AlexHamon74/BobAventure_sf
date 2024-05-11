@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-12">
-                    <img src="{{ asset('img/presentation.jpg' ) }}" class="img-fluid w-100 h-100" alt="">
+                <img src="{{ asset('img/presentation.jpg' ) }}" class="img-fluid w-100 h-100" alt="">
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
             </svg>
         </div>
         
-        <div class="row mb-4" id="a-propos">
+        <div class="row" id="a-propos">
             <div class="col-lg-6 col-12">
                 <div class="row mb-4">
                     <div class="col-4">
@@ -224,23 +224,26 @@
 <section class="contact py-5 bg-1">
     <div class="container">
         <div class="row">
-            <div class="col-8">
-                <div class="bgi-contact">
-                
+            <div class="col-lg-8 col-12">
+                <div class="row mb-4">
+                    <img src="{{ asset('img/contact.jpg' ) }}" class="img-fluid w-100 h-auto" alt="">
                 </div>
             </div>
-            <div class="col-4 color-3 d-flex flex-column justify-content-evenly">
-                <div class="mb-4 p-3">
-                    <h3>Par mail :</h3>
-                    <p class="color-3">Ecrivez-nous à l'adresse mail : <br> contact@contact.fr</p>
-                </div>
-                <div class="mb-4 p-3">
-                    <h3 class="mb-4">Via notre formulaire</h3>
-                    <a href="{{path('contact')}}" class="btn-2">Nous-contacter</a>
-                </div>
-                <div class="mb-4 p-3">
-                    <h3>Par téléphone :</h3>
-                    <p class="color-3">06.06.06.06.06</p>
+
+            <div class="col-lg-4 col-12">
+                <div class="row flex-lg-column justify-content-between color-3 h-100">
+                    <div class="col-12 mb-4 border-contact">
+                        <h3>Par mail</h3>
+                        <p class="color-3">Ecrivez-nous à l'adresse mail :<br> <span class="color-2">contact@contact.fr</span></p>
+                    </div>
+                    <div class="col-12 mb-4 border-contact">
+                        <h3>Via notre formulaire</h3>
+                        <a href="{{path('contact')}}" class="btn-2 mb-4">Nous-contacter</a>
+                    </div>
+                    <div class="col-12 mb-4 border-contact">
+                        <h3>Par téléphone</h3>
+                        <p class="color-2">06.06.06.06.06</p>
+                    </div>
                 </div>
             </div>
         </div>
