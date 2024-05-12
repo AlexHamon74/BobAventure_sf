@@ -3,31 +3,61 @@
 {% block title %}Nos Actualités{% endblock %}
 
 {% block body %}
-{% include 'nav2.html.twig' %}
 
-<div class="container my-5">
-    <h1>Nos Actualités</h1>
-</div>
+<section class="header2">
+    {% include 'nav2.html.twig' %}
+    <div class="container">
+         <h1 class="color-3 mt-auto">Toutes nos actus</h1>
+    </div>
+</section>
 
-<div class="container">
-    <div class="row">
 
-        {% for article in articles %}
-            
-            <div class="col-4">
-                <div class="border mb-5">
-                    <div class="top">image</div>
-                    <div class="bottom">
-                        <h3 class="mb-4"> {{ article.title }} </h3>
-                        <a href=" {{ path('actus_article', {id:article.id}) }} ">En savoir plus</a>
-                    </div>
+
+
+
+
+
+
+
+
+
+<section class="articles py-5">
+    <div class="container">
+
+            {% for article in articles %}
+                
+        <div class="row flex-lg-row flex-column mb-4 border mx-auto" style="max-width:996px">
+            <div class="col-lg-6 col-12 p-0">
+                <div class="">
+                    <img src="{{ asset('img/presentation.jpg' ) }}" class="img-fluid w-100" alt="">
                 </div>
             </div>
 
-        {% endfor %}
+            <div class="col-lg-6 col-12">
+                <div class="p-2">
+                    <div class="d-flex justify-content-between">
+                        <p>catégories +</p> 
+                        <p>{{ article.publishedAt|date('d/m/Y') }}</p>
+                    </div>
+                    <div class="line-clamp-2 ">
+                        <h2>{{article.title}}</h2>
+                    </div>
+                    <div class="line-clamp-3 my-3">
+                        <p>{{article.content}}</p>
+                    </div>
+                    <div>
+                        <a href="{{ path('index_article', {id:article.id}) }}" class=" ">Lire la suite</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            {% endfor %}
 
 
     </div>
-</div>
+</section>
+
+
 
 {% endblock %}
