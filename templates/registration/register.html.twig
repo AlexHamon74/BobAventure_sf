@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un compte{% endblock %}
+
+{% block body %}
+{% include 'nav2.html.twig' %}
+
+<div style="max-width: 390px" class="mx-auto">
+
+    <h1 class="my-5 text-center color-1 w-100">Enregistrement :</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.firstname) }}
+        {{ form_row(registrationForm.birthdate) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword) }}
+        {# {{ form_row(registrationForm.agreeTerms) }} #}
+
+        <button class="btn btn-lg btn-primary" type="submit" style="min-width: 390px">
+            S'enregistrer
+        </button>
+    {{ form_end(registrationForm) }}
+
+</div>
+{% endblock %}
