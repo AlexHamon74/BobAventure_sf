@@ -39,6 +39,11 @@ class Contact
     #[ORM\Column]
     private ?\DateTimeImmutable $CreatedAt = null;
 
+    #[ORM\Column]
+    #[Assert\NotBlank(message:"Ce champ doit être remplis")]
+    #[Assert\Length(exactly: 10, exactMessage:"Le numéro de téléphone doit contenir 10 chiffres")]
+    private ?string $phone_number = null;
+
     public function __construct()
     {
         $this->CreatedAt = new \DateTimeImmutable();
@@ -117,6 +122,18 @@ class Contact
     public function setCreatedAt(\DateTimeImmutable $CreatedAt): static
     {
         $this->CreatedAt = $CreatedAt;
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phone_number;
+    }
+
+    public function setPhoneNumber(string $phone_number): static
+    {
+        $this->phone_number = $phone_number;
 
         return $this;
     }

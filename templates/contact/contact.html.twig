@@ -7,10 +7,34 @@
 
 
 <div class="container my-5">
-    <h1 class="h1">Formulaire de contact</h1>
+    <h1 class="my-4 text-center color-1 w-100">Formulaire de contact :</h1>
     {% include 'flash.html.twig' %}
     
-    {{form(form)}}
+
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.firstname) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(form.phone_number) }}
+        </div>
+    </div>
+    {{ form_row(form.subject) }}
+    {{ form_row(form.message) }}
+    {{ form_row(form.submit) }}
+{{ form_end(form) }}
 </div>
 
 {% endblock %}

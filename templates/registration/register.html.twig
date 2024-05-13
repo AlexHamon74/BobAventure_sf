@@ -7,13 +7,21 @@
 
 <div style="max-width: 390px" class="mx-auto">
 
-    <h1 class="my-5 text-center color-1 w-100">Enregistrement :</h1>
+    <h1 class="my-4 text-center color-1 w-100">Enregistrement :</h1>
 
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
+
+    <div class="row">
+        <div class="col-6">
         {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.firstname) }}
+        </div>
+        <div class="col-6">
+            {{ form_row(registrationForm.firstname) }}
+        </div>
+    </div>
+
         {{ form_row(registrationForm.birthdate) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword) }}
