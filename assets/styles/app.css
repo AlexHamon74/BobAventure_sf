@@ -121,9 +121,10 @@ ul{
         }
     }
     .a-nav2{
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 500;
         text-decoration: none;
-        color: #FDF6EA;
+        color: #504B47;
     }
 
 /* STYLE DES BOUTONS */
