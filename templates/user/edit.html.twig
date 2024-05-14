@@ -5,6 +5,38 @@
 {% block body %}
 {% include 'nav2.html.twig' %}
 
-{{form(form)}}
+
+    <div class="container my-5">
+        {{form_start(form)}}
+        {{ form_errors(form) }}
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(form.firstname) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(form.name) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(form.birthdate) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(form.gender) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {{ form_row(form.phone_number) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(form.location) }}
+            </div>
+            {{form_row(form.submit)}}
+        </div>
+        {{form_end(form)}}
+
+    </div>
+
 
 {% endblock %}

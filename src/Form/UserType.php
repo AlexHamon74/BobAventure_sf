@@ -3,7 +3,11 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,20 +16,34 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
-            ->add('roles')
-            ->add('password')
-            ->add('firstname')
-            ->add('name')
-            ->add('birthdate', null, [
-                'widget' => 'single_text',
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+                'required' => true
             ])
-            ->add('CreatedAt', null, [
-                'widget' => 'single_text',
+            ->add('name', TextType::class, [
+                'label' => 'Nom',
+                'required' => true
             ])
-            ->add('gender')
-            ->add('phone_number')
-            ->add('location')
+            ->add('birthdate', DateType::class, [
+                'widget' => 'single_text',
+                'label' => 'Date de naissance',
+                'required' => true
+            ])
+            ->add('gender', TextType::class, [
+                'label' => 'Genre',
+                'required' => false
+            ])
+            ->add('phone_number', TextType::class, [
+                'label' => 'Numéro de téléphone',
+                'required' => false
+            ])
+            ->add('location', TextType::class, [
+                'label' => 'Ville',
+                'required' => false,
+            ])
+            ->add('submit', SubmitType::class, [
+                'label' => 'Valider'
+            ])
         ;
     }
 
