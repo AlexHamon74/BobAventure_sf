@@ -291,7 +291,7 @@
                             {{ app.user.firstname }} {{ app.user.name }} 
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Modifier vos informations</a></li>
+                            <li><a class="dropdown-item" href="{{ path('user')}}">Votre profil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             {% if 'ROLE_ADMIN' in app.user.roles %}
                             <li><a class="dropdown-item" href="#">Administration</a></li>
