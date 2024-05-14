@@ -129,6 +129,7 @@ ul{
 
 /* STYLE DES BOUTONS */
 .btn-1{
+    display: block;
     font-size: 16px;
     font-weight: 600;
     color: #FDF6EA;
@@ -137,6 +138,7 @@ ul{
     text-transform: uppercase;
     border-radius: 50px;
     text-decoration: none;
+    max-width: 225px;
 }
 .btn-2{
     display: block;
@@ -152,33 +154,21 @@ ul{
 }
 
 
-
-
-
-.header{
-    background-image: url(../img/bgi.png);
-    height: 100vh;
+.header-index{
+    background-image: url(../img/bgi-index.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
-.header-form{
-    background-image: url(../img/bg-form2.png);
-    height: 100vh;
+
+.header-base{
+    background-image: linear-gradient(rgb(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("../img/bgi-base.jpg");
+    height: 100%;
+    position: relative;
     background-size: cover;
     background-position: center;
-}
-.header2{
-    background-image: url(../img/bgi2-lg.png);
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-}
-@media (max-width: 576px) {
-    .header{
-        background-image: url(../img/bgi-sm.png);
-    }
-    .header2{
-        background-image: url(../img/bgi2-sm.png);
-    }
 }
 
 .border-contact{
