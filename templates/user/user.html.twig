@@ -5,5 +5,9 @@
 {% block body %}
 {% include 'nav2.html.twig' %}
 
+{{app.user.name}}
+{{app.user.firstname}}
+<br>
+<a href="{{path('user_edit', {id:app.user.id}) }}" class="btn btn-primary">Modifier mes infos</a>
 
 {% endblock %}
