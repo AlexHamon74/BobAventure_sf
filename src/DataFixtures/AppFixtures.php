@@ -72,7 +72,8 @@ class AppFixtures extends Fixture
             ->setFirstname($generator->firstName())
             ->setEmail($generator->email())
             ->setSubject($generator->realText(15))
-            ->setMessage($generator->realTextBetween(200,400));
+            ->setMessage($generator->realTextBetween(200,400))
+            ->setPhoneNumber("0607080997");
 
         $manager->persist($contact);
 
