@@ -65,20 +65,29 @@ class UserController extends AbstractController
     // Fonction pour afficher un formulaire d'email en cas de mot de passe oublié
     // Après avoir saisis l'email on vérifie si l'email existe
     #[Route('/login/pwdForgot', name:'pwd_forgot')]
-    public function pwdForgot(Request $request): Response
+    public function pwdForgot(Request $request, UserRepository $userRepository): Response
     {
         $form = $this->createForm(ForgotPwdEmailType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $form = $form->getData();
+            $data = $form->getData();
+            $email = $data['email'];
+            $user = $userRepository->findOneByEmail($email);
+
+            if($user) {
+                $this->addFlash('success', 'Votre email à bien été trouvé');
+                return $this->redirectToRoute('pwd_forgot_secret_question', ['id' => $user->getId()]);
+            } else {
+                $this->addFlash('danger', "Cet email n'existe pas");
+                return $this->redirectToRoute('pwd_forgot');
+            }
             
-            dd($form);
         }
-
-
         return $this->render('user/email.html.twig', [
             'form' => $form
         ]);
     }
+
+    
 }
