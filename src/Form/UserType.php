@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,8 +30,16 @@ class UserType extends AbstractType
                 'label' => 'Date de naissance',
                 'required' => true
             ])
-            ->add('gender', TextType::class, [
+            ->add('gender', ChoiceType::class, [
                 'label' => 'Genre',
+                'placeholder' => 'Choisissez une option',
+                'choices' => [
+                    'Mr' => 'Mr',
+                    'Mme' => 'Mme',
+                    'Robot destructeur de planète' => 'Robot destructeur de planète',
+                    'Helicoptère de combat' => 'Helicoptère de combat',
+                    'Autre' => 'Autre'
+                ],
                 'required' => false
             ])
             ->add('phone_number', TextType::class, [
