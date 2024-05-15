@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[UniqueEntity('title', message:"Ce nom d'article existe déjà")]
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
@@ -29,7 +30,8 @@ class Article
     #[Assert\NotNull]
     private ?\DateTimeImmutable $publishedAt = null;
 
-    public function __construct()
+    #[ORM\PrePersist]
+    public function setPublishedAtValue(): void
     {
         $this->publishedAt = new \DateTimeImmutable();
     }
