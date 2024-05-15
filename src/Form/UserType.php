@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,6 +18,10 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('email', EmailType::class, [
+                'label' => 'Email',
+                'required' => true
+            ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'required' => true
@@ -49,6 +54,18 @@ class UserType extends AbstractType
             ->add('location', TextType::class, [
                 'label' => 'Ville',
                 'required' => false,
+            ])
+            ->add('secret_question', ChoiceType::class, [
+                'label' => 'Question secrète',
+                'placeholder' => 'Choisissez une option',
+                'choices' => [
+                    'Quel est le nom de votre premier animal de compagnie ?' =>  'Quel est le nom de votre premier animal de compagnie ?',
+                    'Quelle est le nom de votre ville de naissance ?' =>  'Quelle est le nom de votre ville de naissance ?',
+                    'Quel est le nom de votre film préféré ?' => 'Quel est le nom de votre film préféré ?',
+                ],
+            ])
+            ->add('secret_answer', TextType::class, [
+                'label' => 'Réponse'
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider'

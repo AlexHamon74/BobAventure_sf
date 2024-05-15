@@ -26,7 +26,15 @@
             {{ form_row(registrationForm.birthdate) }}
             {{ form_row(registrationForm.email) }}
             {{ form_row(registrationForm.plainPassword) }}
-            {# {{ form_row(registrationForm.agreeTerms) }} #}
+        <div class="row">
+            <div class="col-6">
+            {{ form_row(registrationForm.secret_question) }}
+            </div>
+            <div class="col-6">
+                {{ form_row(registrationForm.secret_answer) }}
+            </div>
+        </div>
+            
 
             <button class="btn btn-lg btn-primary" type="submit" style="min-width: 390px">
                 S'enregistrer

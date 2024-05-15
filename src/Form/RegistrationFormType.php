@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,14 +30,7 @@ class RegistrationFormType extends AbstractType
                 'required' => true
             ])
             ->add('email', TextType::class)
-            // ->add('agreeTerms', CheckboxType::class, [
-            //     'mapped' => false,
-            //     'constraints' => [
-            //         new IsTrue([
-            //             'message' => 'You should agree to our terms.',
-            //         ]),
-            //     ],
-            // ])
+
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -54,6 +48,18 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+            ])
+            ->add('secret_question', ChoiceType::class, [
+                'label' => 'Question secrète',
+                'placeholder' => 'Choisissez une option',
+                'choices' => [
+                    'Quel est le nom de votre premier animal de compagnie ?' =>  'Quel est le nom de votre premier animal de compagnie ?',
+                    'Quelle est le nom de votre ville de naissance ?' =>  'Quelle est le nom de votre ville de naissance ?',
+                    'Quel est le nom de votre film préféré ?' => 'Quel est le nom de votre film préféré ?',
+                ],
+            ])
+            ->add('secret_answer', TextType::class, [
+                'label' => 'Réponse'
             ])
         ;
     }

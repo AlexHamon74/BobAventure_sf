@@ -51,7 +51,9 @@ class AppFixtures extends Fixture
             ->setPassword($this->hasher->hashPassword($regularUser, 'test'))
             ->setFirstname("Bob")
             ->setName("Test")
-            ->setBirthdate($generator->dateTimeBetween('-22 years'));
+            ->setBirthdate($generator->dateTimeBetween('-22 years'))
+            ->setSecretQuestion('Quel est le nom de votre film préféré ?')
+            ->setSecretAnswer('Je suis une légende');
 
         $manager->persist($regularUser);
 
@@ -62,7 +64,9 @@ class AppFixtures extends Fixture
             ->setPassword($this->hasher->hashPassword($adminUser, 'admin'))
             ->setFirstname('admin')
             ->setName('admin')
-            ->setBirthdate($generator->dateTimeBetween('-22 years'));
+            ->setBirthdate($generator->dateTimeBetween('-22 years'))
+            ->setSecretQuestion('Quelle est le nom de votre ville de naissance ?')
+            ->setSecretAnswer('Annemasse');
 
         $manager->persist($adminUser);
 

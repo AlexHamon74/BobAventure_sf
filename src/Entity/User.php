@@ -52,7 +52,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private ?\DateTimeImmutable $CreatedAt = null;
-
     #[ORM\PrePersist]
     public function setCreatedAtValue(): void
     {
@@ -68,6 +67,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $location = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Vous devez choisir une question secrète")]
+    private ?string $secret_question = null;
+
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message:"Vous devez répondre à la question secrète choisis")]
+    private ?string $secret_answer = null;
 
 
     public function getId(): ?int
@@ -225,6 +232,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setLocation(?string $location): static
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    public function getSecretQuestion(): ?string
+    {
+        return $this->secret_question;
+    }
+
+    public function setSecretQuestion(string $secret_question): static
+    {
+        $this->secret_question = $secret_question;
+
+        return $this;
+    }
+
+    public function getSecretAnswer(): ?string
+    {
+        return $this->secret_answer;
+    }
+
+    public function setSecretAnswer(string $secret_answer): static
+    {
+        $this->secret_answer = $secret_answer;
 
         return $this;
     }

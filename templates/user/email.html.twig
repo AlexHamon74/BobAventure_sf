@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mot de passe oublié{% endblock %}
+
+{% block body %}
+{% include 'nav2.html.twig' %}
+
+<div class="container my-5">
+
+    {{form(form)}}
+    {# {{form_start(form)}}
+        {{ form_errors(form) }}
+            {{form_row(form.email)}}
+            {{form_row(form.submit)}}
+    {{form_end(form)}} #}
+
+</div>
+
+{% endblock %}
