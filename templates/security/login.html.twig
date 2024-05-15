@@ -12,15 +12,10 @@
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-            </div>
-        {% endif %}
-
         <div style="max-width: 390px" class="mx-auto">
 
             <h1 class="my-4 text-center">Connexion :</h1>
+            {% include 'flash.html.twig' %}
             <div class="mb-3">
                 <label for="inputEmail">Email</label>
                 <input type="email" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
