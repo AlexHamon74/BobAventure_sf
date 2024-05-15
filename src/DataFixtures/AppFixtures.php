@@ -29,7 +29,7 @@ class AppFixtures extends Fixture
         foreach(self::CATEGORIES as $categoryName){
         $category = new Category();
             $category->setName($categoryName)
-                ->setDescription($generator->realTextBetween(1000,1200));
+                ->setDescription($generator->realTextBetween(300,400));
         $manager->persist($category);
         $categories[] = $category;
         }

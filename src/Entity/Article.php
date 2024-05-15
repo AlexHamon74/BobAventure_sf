@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use App\Repository\ArticleRepository;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[UniqueEntity('title', message:"Ce nom d'article existe déjà")]
 #[ORM\HasLifecycleCallbacks]
@@ -16,10 +17,12 @@ class Article
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('articles:read')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank(message:'Vous devez indiquer un titre')]
+    #[Groups('articles:read')]
     private ?string $title = null;
 
     #[ORM\Column(type: Types::TEXT)]
@@ -28,6 +31,7 @@ class Article
 
     #[ORM\Column]
     #[Assert\NotNull]
+    #[Groups('articles:read')]
     private ?\DateTimeImmutable $publishedAt = null;
 
     #[ORM\PrePersist]
@@ -38,6 +42,7 @@ class Article
 
     #[ORM\ManyToOne(inversedBy: 'article')]
     #[Assert\NotBlank(message:'Vous devez indiquer une catégorie')]
+    #[Groups('articles:read')]
     private ?Category $category = null;
 
     public function getId(): ?int
