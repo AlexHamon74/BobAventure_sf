@@ -23,14 +23,14 @@
                 <div class="row g-0">
                     <div class="col-md-4">
                         <a href="" class="img-link">
-                            <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height rounded-start" alt="...">
+                            <img src="{{ asset('img/bgi-.jpg') }}" class="img-fluid img-height rounded-start" alt="...">
                         </a>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <span class="badge bg-success mb-2">{{article.category.name}}</span>
                             <h2 class="card-title line-clamp-1 fs-3">{{article.title}}</h2>
-                            <p class="card-text fs-6 line-clamp-3">{{article.content}}</p>
+                            <p class="card-text fs-6 line-clamp-4">{{article.content}}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="{{path('index_article', {id:article.id}) }}" class="btn btn-primary">Lire la suite</a>
                                 <p class="card-text"><small class="text-muted"> Publié le {{ article.publishedAt|date('d/m/Y') }}</small></p>
