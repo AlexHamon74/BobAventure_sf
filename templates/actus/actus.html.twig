@@ -16,33 +16,30 @@
 <section class="articles py-5">
     <div class="container">
 
-            {% for article in articles %}
-                
-        <div class="row flex-lg-row flex-column mb-4 border mx-auto" style="max-width:996px">
-            <div class="col-lg-6 col-12 p-0">
-                <div class="">
-                    <img src="{{ asset('img/presentation.jpg' ) }}" class="img-fluid w-100" alt="">
-                </div>
-            </div>
 
-            <div class="col-lg-6 col-12">
-                <div class="p-2">
-                    <div class="d-flex justify-content-between">
-                        <p>catégories +</p> 
-                        <p>{{ article.publishedAt|date('d/m/Y') }}</p>
+            {% for article in articles %}
+
+            <div class="card mb-5 mx-auto shadow" style="max-width: 900px; background-color: #F8FCFF">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <a href="" class="img-link">
+                            <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height rounded-start" alt="...">
+                        </a>
                     </div>
-                    <div class="line-clamp-2 ">
-                        <h2>{{article.title}}</h2>
-                    </div>
-                    <div class="line-clamp-3 my-3">
-                        <p>{{article.content}}</p>
-                    </div>
-                    <div>
-                        <a href="{{ path('index_article', {id:article.id}) }}" class=" ">Lire la suite</a>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">{{article.category.name}}</span>
+                            <h2 class="card-title line-clamp-1 fs-3">{{article.title}}</h2>
+                            <p class="card-text fs-6 line-clamp-3">{{article.content}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="{{path('index_article', {id:article.id}) }}" class="btn btn-primary">Lire la suite</a>
+                                <p class="card-text"><small class="text-muted"> Publié le {{ article.publishedAt|date('d/m/Y') }}</small></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+                
 
             {% endfor %}
 
@@ -51,5 +48,5 @@
 </section>
 
 
-
+{% include 'footer.html.twig' %}
 {% endblock %}
