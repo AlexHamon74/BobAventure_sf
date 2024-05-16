@@ -7,44 +7,65 @@
 
 
     <div class="container my-5">
-        {{form_start(form)}}
-        {{ form_errors(form) }}
-            {{form_row(form.email)}}
         <div class="row">
-            <div class="col-6">
-                {{ form_row(form.firstname) }}
+            {{ form_errors(form) }}
+
+            <div class="col-6 mb-4">
+                {{form_start(form)}}
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nom</th>
+                            <td>{{form_row(form.name)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prénom</th>
+                            <td>{{form_row(form.firstname)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date de naissance</th>
+                            <td>{{form_row(form.birthdate)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td>{{form_row(form.email)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Question secrète</th>
+                            <td>{{form_row(form.secret_question)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Réponse</th>
+                            <td>{{form_row(form.secret_answer)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+
             <div class="col-6">
-                {{ form_row(form.name) }}
+                {{form_start(form)}}
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Genre</th>
+                            <td>{{ form_row(form.gender) }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Numéro de téléphone</th>
+                            <td>{{form_row(form.phone_number)}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Adresse / Ville</th>
+                            <td>{{form_row(form.location)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                {{ form_row(form.birthdate) }}
-            </div>
-            <div class="col-6">
-                {{ form_row(form.gender) }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                {{ form_row(form.phone_number) }}
-            </div>
-            <div class="col-6">
-                {{ form_row(form.location) }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-            {{ form_row(form.secret_question) }}
-            </div>
-            <div class="col-6">
-                {{ form_row(form.secret_answer) }}
-            </div>
-        </div>
+    
             {{form_row(form.submit)}}
         {{form_end(form)}}
 
+        </div>
     </div>
 
 

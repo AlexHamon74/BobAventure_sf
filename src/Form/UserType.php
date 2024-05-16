@@ -3,14 +3,14 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class UserType extends AbstractType
 {
@@ -18,25 +18,25 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Email',
-                'required' => true
+                'required' => true,
+                'label' => false
             ])
             ->add('firstname', TextType::class, [
-                'label' => 'Prénom',
-                'required' => true
+                'required' => true,
+                'label' => false
             ])
             ->add('name', TextType::class, [
-                'label' => 'Nom',
-                'required' => true
+                'required' => true,
+                'label' => false
             ])
             ->add('birthdate', DateType::class, [
                 'widget' => 'single_text',
-                'label' => 'Date de naissance',
-                'required' => true
+                'required' => true,
+                'label' => false
             ])
             ->add('gender', ChoiceType::class, [
-                'label' => 'Genre',
                 'placeholder' => 'Choisissez une option',
+                'label' => false,
                 'choices' => [
                     'Mr' => 'Mr',
                     'Mme' => 'Mme',
@@ -47,16 +47,16 @@ class UserType extends AbstractType
                 'required' => false
             ])
             ->add('phone_number', TextType::class, [
-                'label' => 'Numéro de téléphone',
-                'required' => false
+                'required' => false,
+                'label' => false
             ])
             ->add('location', TextType::class, [
-                'label' => 'Ville',
                 'required' => false,
+                'label' => false
             ])
             ->add('secret_question', ChoiceType::class, [
-                'label' => 'Question secrète',
                 'placeholder' => 'Choisissez une option',
+                'label' => false,
                 'choices' => [
                     'Quel est le nom de votre premier animal de compagnie ?' =>  'Quel est le nom de votre premier animal de compagnie ?',
                     'Quelle est le nom de votre ville de naissance ?' =>  'Quelle est le nom de votre ville de naissance ?',
@@ -64,7 +64,7 @@ class UserType extends AbstractType
                 ],
             ])
             ->add('secret_answer', TextType::class, [
-                'label' => 'Réponse'
+                'label' => false
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'Valider'
