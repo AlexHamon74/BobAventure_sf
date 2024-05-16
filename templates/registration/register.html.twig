@@ -3,12 +3,13 @@
 {% block title %}Création d'un compte{% endblock %}
 
 {% block body %}
-<section class="header-form">
+
+<section class="my-4">
 {% include 'nav2.html.twig' %}
 
-    <div style="max-width: 390px" class="mx-auto">
+     <div style="max-width: 440px; background-color: #F8FCFF" class="mx-auto border border-dark-subtle rounded p-4">
 
-        <h1 class="my-4 text-center color-1 w-100">Créer un compte</h1>
+        <h1 class="mb-4 text-center">Créer un compte</h1>
 
         {{ form_errors(registrationForm) }}
 
@@ -36,7 +37,7 @@
         </div>
             
 
-            <button class="btn btn-lg btn-primary" type="submit" style="min-width: 390px">
+            <button class="btn btn-lg btn-primary w-100" type="submit">
                 S'enregistrer
             </button>
         {{ form_end(registrationForm) }}
