@@ -3,15 +3,59 @@
 {% block title %}{{article.title}}{% endblock %}
 
 {% block body %}
-{% include 'nav2.html.twig' %}
 
-<div class="container-fluid p-0">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,224L1440,288L1440,0L0,0Z"></path></svg>
-</div>
 
-<div class="container my-5">
-    <h1> {{article.title}} </h1>
-</div>
+<section class="header-actus mb-5" style="height: 400px; box-shadow: 0px 2px 10px 1px #504B47;">
+    <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height w-100" alt="">
+
+        <div class="w-100 top-0 left-0 position-absolute nav-blur">
+            {% include 'nav2.html.twig' %}
+        </div>
+        
+        <div class="w-100 left-0 position-absolute color-3" style="top:35%">
+            <div class="container">
+                <h1>{{article.title}}</h1>
+            </div>
+        </div>
+</section>
+
+<section class="actus-content py-4">
+    <div class="container">
+        <img src="{{ asset('img/presentation.jpg') }}" class="img-fluid img-height rounded-2 w-50 float-start me-4" alt="">
+            <p>{{article.content}}</p>
+    </div>
+</section>
+
+<section class="actus-images bg-1 py-4 mb-5">
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-6">
+                <div class="border mb-4">
+                    <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height w-100" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="border mb-4">
+                    <img src="{{ asset('img/bgi-base.jpg') }}" class="img-fluid img-height w-100" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="border mb-4">
+                    <img src="{{ asset('img/bgi-.jpg') }}" class="img-fluid img-height w-100" alt="">
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <div class="border mb-4">
+                    <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 
 

@@ -103,7 +103,7 @@ p, a{
     color: #504B47;
 }
 p{
-    font-size: 18px;
+    font-size: 17px;
     text-align: justify;
 }
 ul{
@@ -183,15 +183,14 @@ ul{
     background-position: center;
 }
 
-.border-contact{
-    border-bottom: 1px solid #6d6b69;
-    border-right: 1px solid #6d6b69;
-}
 .img-height{
     object-fit: cover;
     height: 100%;
 }
-
+.nav-blur{
+    background: rgba(255, 255, 255, 0.4); /* Arrière-plan clair et semi-transparent */
+    backdrop-filter: blur(4px); /* Applique un flou de 10 pixels */
+}
 
 
 

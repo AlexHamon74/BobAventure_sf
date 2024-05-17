@@ -13,13 +13,13 @@
                     <span class="h1-2">BOB AVENTURE</span><br>
                     <span class="h1-3">RAID 4x4 ET DECOUVERTES</span>
                 </h1>
-                <a href="#presentation" class="btn-1 mx-auto my-5">En savoir plus</a>
+                <a href="#presentation" class="btn-1 mx-auto mb-4">En savoir plus</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="presentation py-5 bg-3">
+<section class="presentation py-4 bg-3">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-12 mb-4">
@@ -46,7 +46,7 @@
                         </g>
                     </svg>
                     <h2 class="color-1">Présentation</h2>
-                    <p class="my-5">
+                    <p class="my-4">
                         Cette association a pour but de réunir des adhérents passionnés de 4x4 et de promouvoir ensemble notre loisir sur les pistes et nos chemins d’Europe ou d’Afrique. <br><br>
                         Nous allons organiser des sorties 4x4, balades et découverte du terroir tout en respectant et en protégeant ce que la nature nous offre. L’esprit de compétition n’est pas notre philosophie et nous n’organiserons pas de courses ou rallyes.
                     </p> 
@@ -63,9 +63,9 @@
     </div>
 </section>
 
-<section class="actus py-5 bg-1">
+<section class="actus py-4 bg-1">
     <div class="container">
-        <div class="d-flex justify-content-center align-items-center mb-5 gap-4">
+        <div class="d-flex justify-content-center align-items-center mb-4 gap-4">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80px" width="80px" version="1.1" id="Layer_1" viewBox="0 0 460 460" xml:space="preserve">
                 <g id="XMLID_2566_">
                     <path id="XMLID_995_" style="fill:#BC8E57;" d="M87.295,8.153c3.777,4.02,3.573,10.335-0.456,14.104l-14.59,13.649L58.57,21.347   L73.161,7.698C77.19,3.929,83.518,4.132,87.295,8.153z"/>
@@ -112,9 +112,9 @@
     </div>
 </section>
 
-<section class="a-propos bg-3 py-5">
+<section class="a-propos bg-3 py-4">
     <div class="container">
-        <div class="d-flex justify-content-center align-items-center mb-5 gap-4">
+        <div class="d-flex justify-content-center align-items-center mb-4 gap-4">
             <h2 class="color-1">A propos de nous</h2>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80px" width="80px" version="1.1" id="Layer_1" viewBox="0 0 460 460" xml:space="preserve">
                 <g id="XMLID_2566_">
@@ -209,9 +209,9 @@
     </div>
 </section>
 
-<section class="contact py-5 bg-1">
+<section class="contact py-4 bg-1">
     <div class="container">
-        <div class="d-flex justify-content-center align-items-center mb-5 gap-4">
+        <div class="d-flex justify-content-center align-items-center mb-4 gap-4">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="80px" width="80px" version="1.1" id="Layer_1" viewBox="0 0 460 460" xml:space="preserve">
                 <g id="XMLID_2566_">
                     <path id="XMLID_995_" style="fill:#BC8E57;" d="M87.295,8.153c3.777,4.02,3.573,10.335-0.456,14.104l-14.59,13.649L58.57,21.347   L73.161,7.698C77.19,3.929,83.518,4.132,87.295,8.153z"/>
@@ -237,24 +237,28 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-12">
-                <div class="row mb-4">
-                    <img src="{{ asset('img/contact.jpg' ) }}" class="img-fluid w-100" alt="">
-                </div>
+                    <img src="{{ asset('img/contact.jpg' ) }}" class="img-fluid img-height rounded-2" alt="">
             </div>
 
-            <div class="col-lg-4 col-12">
-                <div class="row flex-lg-column justify-content-between color-3 h-100">
-                    <div class="col-12 mb-4 border-contact">
-                        <h3>Par mail</h3>
-                        <p class="color-3">Ecrivez-nous à l'adresse mail :<br> <span class="color-2">contact@contact.fr</span></p>
+            <div class="col-lg-4 col-12 my-3">
+                <div class="row flex-lg-column justify-content-lg-evenly justify-content-between color-3 h-100">
+                    <div class="col-12">
+                        <div class="mb-4">
+                            <h3>Par mail</h3>
+                            <p class="color-3">Ecrivez-nous à l'adresse mail :<br> <span class="color-2">contact@contact.fr</span></p>
+                        </div>
                     </div>
-                    <div class="col-12 mb-4 border-contact">
-                        <h3>Via notre formulaire</h3>
-                        <a href="{{path('contact')}}" class="btn-2 mb-4">Nous-contacter</a>
+                    <div class="col-12">
+                        <div class="mb-4">
+                            <h3>Via notre formulaire</h3>
+                            <a href="{{path('contact')}}" class="btn-2 text-center">Nous-contacter</a>
+                        </div>
                     </div>
-                    <div class="col-12 mb-4 border-contact">
-                        <h3>Par téléphone</h3>
-                        <p class="color-2">06.06.06.06.06</p>
+                    <div class="col-12">
+                        <div class="mb-4">
+                            <h3>Par téléphone</h3>
+                            <p class="color-2">06.06.06.06.06</p>
+                        </div>
                     </div>
                 </div>
             </div>
