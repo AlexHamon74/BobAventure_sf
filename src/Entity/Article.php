@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ArticleRepository;
@@ -49,6 +51,17 @@ class Article
     #[Assert\NotBlank(message:"Vous devez ajouter une image de présentation")]
     #[Groups('articles:read')]
     private ?string $main_image = null;
+
+    /**
+     * @var Collection<int, ArticleImage>
+     */
+    #[ORM\OneToMany(targetEntity: ArticleImage::class, mappedBy: 'article')]
+    private Collection $articleImages;
+
+    public function __construct()
+    {
+        $this->articleImages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -111,6 +124,36 @@ class Article
     public function setMainImage(string $main_image): static
     {
         $this->main_image = $main_image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ArticleImage>
+     */
+    public function getArticleImages(): Collection
+    {
+        return $this->articleImages;
+    }
+
+    public function addArticleImage(ArticleImage $articleImage): static
+    {
+        if (!$this->articleImages->contains($articleImage)) {
+            $this->articleImages->add($articleImage);
+            $articleImage->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticleImage(ArticleImage $articleImage): static
+    {
+        if ($this->articleImages->removeElement($articleImage)) {
+            // set the owning side to null (unless already changed)
+            if ($articleImage->getArticle() === $this) {
+                $articleImage->setArticle(null);
+            }
+        }
 
         return $this;
     }
