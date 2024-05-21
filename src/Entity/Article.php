@@ -45,6 +45,11 @@ class Article
     #[Groups('articles:read')]
     private ?Category $category = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank(message:"Vous devez ajouter une image de présentation")]
+    #[Groups('articles:read')]
+    private ?string $main_image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +99,18 @@ class Article
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getMainImage(): ?string
+    {
+        return $this->main_image;
+    }
+
+    public function setMainImage(string $main_image): static
+    {
+        $this->main_image = $main_image;
 
         return $this;
     }

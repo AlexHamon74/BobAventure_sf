@@ -39,7 +39,8 @@ class AppFixtures extends Fixture
             $article = new Article();
             $article->setTitle($generator->realText(25))
                 ->setContent($generator->realTextBetween(1800,2000))
-                ->setCategory($generator->randomElement($categories));
+                ->setCategory($generator->randomElement($categories))
+                ->setMainImage($generator->imageUrl(640, 480, 'animals', true));
 
             $manager->persist($article);
         }
