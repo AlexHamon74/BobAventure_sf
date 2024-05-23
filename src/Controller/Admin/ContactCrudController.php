@@ -3,13 +3,15 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Contact;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ContactCrudController extends AbstractCrudController
@@ -24,40 +26,38 @@ class ContactCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id')
-            ->setFormTypeOption('disabled', true),
+            IdField::new('id'),
 
             TextField::new('name')
-            ->setLabel('Nom')
-            ->setFormTypeOption('disabled', true),
+            ->setLabel('Nom'),
 
             TextField::new('firstname')
-            ->setLabel('Prenom')
-            ->setFormTypeOption('disabled', true),
+            ->setLabel('Prenom'),
 
             EmailField::new('email')
-            ->setLabel('Email')
-            ->setFormTypeOption('disabled', true),
+            ->setLabel('Email'),
 
             TelephoneField::new('phone_number')
-            ->setLabel('Numéro de téléphone')
-            ->hideOnIndex()
-            ->setFormTypeOption('disabled', true),
+            ->setLabel('Numéro de téléphone'),
 
             TextField::new('subject')
-            ->setLabel('Objet')
-            ->setFormTypeOption('disabled', true),
+            ->setLabel('Objet'),
 
             TextareaField::new('message')
-            ->setLabel('Message')
-            ->setFormTypeOption('disabled', 'disabled'),
+            ->hideOnIndex()
+            ->setLabel('Message'),
 
             DateField::new('created_at')
             ->setLabel('Créé le')
             ->setFormat('d/MM/Y')
-            ->setFormTypeOption('disabled', true),
 
         ];
+    }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->disable(Action::NEW, Action::EDIT)
+            ->ADD(Crud::PAGE_INDEX, Action::DETAIL);
     }
     
 }

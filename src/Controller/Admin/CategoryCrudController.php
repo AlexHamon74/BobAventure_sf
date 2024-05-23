@@ -19,10 +19,11 @@ class CategoryCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-            ->hideOnIndex()
             ->setFormTypeOption('disabled', true),
+
             TextField::new('name')
             ->setLabel('Nom'),
+            
             TextareaField::new('description'),
         ];
     }
