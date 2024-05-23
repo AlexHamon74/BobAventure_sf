@@ -4,13 +4,15 @@ namespace App\Controller\Admin;
 
 use DateTime;
 use App\Entity\Article;
+use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Filter\TextFilter;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -23,7 +25,6 @@ class ArticleCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-            ->hideOnIndex()
             ->setFormTypeOption('disabled', true),
 
             TextField::new('title')
@@ -32,15 +33,19 @@ class ArticleCrudController extends AbstractCrudController
             TextEditorField::new('content')
             ->setLabel('Contenu'),
 
-            TextField::new('category.name')
+            ChoiceField::new('category')
             ->setLabel('Catégorie'),
             
             ImageField::new('main_image')
-            ->setLabel('Image de couverture'),
+            ->setLabel('Image de couverture')
+            ->setBasePath('/uploads/images/')
+            ->setUploadDir('public/uploads/images')
+            ->setUploadedFileNamePattern('[randomhash].[extension]'),
             
             DateField::new('published_at')
             ->setLabel('Publié le')
             ->setFormat('dd/MM/Y'),
+
         ];
     }
 }

@@ -4,16 +4,17 @@ namespace App\Controller\Admin;
 
 use App\Entity\Contact;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
 
 class ContactCrudController extends AbstractCrudController
 {
+
     public static function getEntityFqcn(): string
     {
         return Contact::class;
@@ -24,7 +25,6 @@ class ContactCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id')
-            ->hideOnIndex()
             ->setFormTypeOption('disabled', true),
 
             TextField::new('name')
@@ -50,7 +50,7 @@ class ContactCrudController extends AbstractCrudController
 
             TextareaField::new('message')
             ->setLabel('Message')
-            ->setFormTypeOption('disabled', true),
+            ->setFormTypeOption('disabled', 'disabled'),
 
             DateField::new('created_at')
             ->setLabel('Créé le')
