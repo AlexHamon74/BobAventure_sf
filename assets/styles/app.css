@@ -189,7 +189,7 @@ ul{
 }
 .nav-blur{
     background: rgba(255, 255, 255, 0.4); /* Arrière-plan clair et semi-transparent */
-    backdrop-filter: blur(4px); /* Applique un flou de 10 pixels */
+    backdrop-filter: blur(2px); /* Applique un flou de 10 pixels */
 }
 
 

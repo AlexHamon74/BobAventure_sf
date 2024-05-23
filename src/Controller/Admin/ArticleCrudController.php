@@ -4,15 +4,15 @@ namespace App\Controller\Admin;
 
 use DateTime;
 use App\Entity\Article;
-use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 
 class ArticleCrudController extends AbstractCrudController
 {
@@ -33,7 +33,7 @@ class ArticleCrudController extends AbstractCrudController
             TextEditorField::new('content')
             ->setLabel('Contenu'),
 
-            ChoiceField::new('category')
+            AssociationField::new('category')
             ->setLabel('Catégorie'),
             
             ImageField::new('main_image')
@@ -43,6 +43,7 @@ class ArticleCrudController extends AbstractCrudController
             ->setUploadedFileNamePattern('[randomhash].[extension]'),
             
             DateField::new('published_at')
+            ->hideOnForm()
             ->setLabel('Publié le')
             ->setFormat('dd/MM/Y'),
 

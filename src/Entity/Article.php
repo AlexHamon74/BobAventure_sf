@@ -32,7 +32,6 @@ class Article
     private ?string $content = null;
 
     #[ORM\Column]
-    #[Assert\NotNull]
     #[Groups('articles:read')]
     private ?\DateTimeImmutable $publishedAt = null;
 
