@@ -54,7 +54,7 @@ class Article
     /**
      * @var Collection<int, ArticleImage>
      */
-    #[ORM\OneToMany(targetEntity: ArticleImage::class, mappedBy: 'article')]
+    #[ORM\OneToMany(targetEntity: ArticleImage::class, mappedBy: 'article', cascade: ['persist', 'remove'])]
     private Collection $articleImages;
 
     public function __construct()

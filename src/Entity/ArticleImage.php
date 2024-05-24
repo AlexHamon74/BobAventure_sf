@@ -16,7 +16,7 @@ class ArticleImage
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $filename = null;
 
-    #[ORM\ManyToOne(inversedBy: 'articleImages')]
+    #[ORM\ManyToOne(inversedBy: 'articleImages', cascade:['persist', 'remove'])]
     private ?article $article = null;
 
     public function getId(): ?int
