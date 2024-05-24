@@ -24,6 +24,7 @@ class ImageType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => ArticleImage::class,
+            'multiple' => true,
         ]);
     }
 }
