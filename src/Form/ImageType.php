@@ -17,6 +17,7 @@ class ImageType extends AbstractType
                 'label' => 'ArticleImage',
                 'mapped' => false,
                 'required' => false,
+                'multiple' => true,
             ]);
     }
 
@@ -24,7 +25,6 @@ class ImageType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => ArticleImage::class,
-            'multiple' => true,
         ]);
     }
 }
