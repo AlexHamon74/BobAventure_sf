@@ -19,11 +19,11 @@
 
             {% for article in articles %}
 
-            <div class="card mb-5 mx-auto shadow" style="max-width: 900px; background-color: #F8FCFF">
+            <div class="card mb-5 mx-auto shadow bg-4" style="max-width: 900px">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <a href="" class="img-link">
-                            <img src="{{ asset('uploads/images/' ~ article.mainImage)}}" class="img-fluid img-height rounded-start" alt="...">
+                            <img src="{{ asset('uploads/images/' ~ article.mainImage)}}" class="img-fluid img-height rounded-start" alt="Image principale de l'article : {{article.title}}">
                         </a>
                     </div>
                     <div class="col-md-8">

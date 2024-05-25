@@ -40,8 +40,6 @@ class UserType extends AbstractType
                 'choices' => [
                     'Mr' => 'Mr',
                     'Mme' => 'Mme',
-                    'Robot destructeur de planète' => 'Robot destructeur de planète',
-                    'Helicoptère de combat' => 'Helicoptère de combat',
                     'Autre' => 'Autre'
                 ],
                 'required' => false

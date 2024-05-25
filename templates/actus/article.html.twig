@@ -5,24 +5,21 @@
 {% block body %}
 
 
-<section class="header-actus mb-5" style="height: 400px; box-shadow: 0px 2px 10px 1px #504B47;">
-    <img src="{{ asset('uploads/images/' ~ article.mainImage)}}" class="img-fluid img-height w-100" alt="">
+<section class="header-actus mb-4">
+    <img src="{{ asset('uploads/images/' ~ article.mainImage)}}" class="img-fluid img-height w-100 shadow" alt="Image principale de l'article : {{article.title}}" style="height: 400px">
 
         <div class="w-100 top-0 left-0 position-absolute nav-blur">
             {% include 'nav2.html.twig' %}
-        </div>
-        
-        <div class="w-100 left-0 position-absolute color-3" style="top:35%">
-            <div class="container">
-                <h1>{{article.title}}</h1>
-            </div>
         </div>
 </section>
 
 <section class="actus-content py-4">
     <div class="container">
-        <img src="{{ asset('img/presentation.jpg') }}" class="img-fluid img-height rounded-2 w-50 float-start me-4" alt="">
-            <p>{{article.content}}</p>
+        <h1 class="color-1 mb-4">
+            {{article.title}}
+        </h1>
+        <img src="{{ asset('img/test1.jpg') }}" class="img-fluid img-height rounded-2 w-50 float-start me-4" alt="">
+        <p>{{article.content}}</p>
     </div>
 </section>
 
@@ -32,22 +29,22 @@
         <div class="row align-items-center">
             <div class="col-lg-3 col-6">
                 <div class="border mb-4">
-                    <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height w-100" alt="">
+                    <img src="{{ asset('img/test1.jpg') }}" class="img-fluid img-height" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="border mb-4">
-                    <img src="{{ asset('img/bgi-base.jpg') }}" class="img-fluid img-height w-100" alt="">
+                    <img src="{{ asset('img/bgi-base.jpg') }}" class="img-fluid img-height" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="border mb-4">
-                    <img src="{{ asset('img/bgi-.jpg') }}" class="img-fluid img-height w-100" alt="">
+                    <img src="{{ asset('img/test2.jpg') }}" class="img-fluid img-height" alt="">
                 </div>
             </div>
             <div class="col-lg-3 col-6">
                 <div class="border mb-4">
-                    <img src="{{ asset('img/rien.jpg') }}" class="img-fluid img-height w-100" alt="">
+                    <img src="{{ asset('img/test1.jpg') }}" class="img-fluid img-height" alt="">
                 </div>
             </div>
         </div>
@@ -58,5 +55,5 @@
 
 
 
-
+{% include 'footer.html.twig' %}
 {% endblock %}

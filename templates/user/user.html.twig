@@ -5,83 +5,86 @@
 {% block body %}
 {% include 'nav2.html.twig' %}
 
+<section class="py-5">
+    <div class="container">
+        {% include 'flash.html.twig' %}
+        <div class="row">
 
-<div class="container">
-    {% include 'flash.html.twig' %}
-    <div class="row">
-
-        <div class="d-flex justify-content-center align-items-center gap-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
-                <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
-            </svg>
-            <div>
-                <a href="{{path('user_edit', {id:app.user.id}) }}" class="btn btn-primary">Modifier mes infos</a>
+            <div class="d-flex justify-content-center align-items-center gap-5 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+                </svg>
+                <div>
+                    <a href="{{path('user_edit', {id:app.user.id}) }}" class="btn btn-primary">Modifier mes infos</a>
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-6 col-12 mt-4">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th scope="row">Nom :</th>
-                        <td>{{app.user.name}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Prénom :</th>
-                        <td>{{app.user.firstname}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Date de naissance :</th>
-                        <td>{{app.user.birthdate|date("d/m/Y")}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Email :</th>
-                        <td>{{app.user.email}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Question secrète :</th>
-                        <td>{{app.user.secretQuestion}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Réponse secrète :</th>
-                        <td>{{app.user.secretAnswer}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="col-lg-6 col-12">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nom :</th>
+                            <td>{{app.user.name}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prénom :</th>
+                            <td>{{app.user.firstname}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date de naissance :</th>
+                            <td>{{app.user.birthdate|date("d/m/Y")}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email :</th>
+                            <td>{{app.user.email}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Question secrète :</th>
+                            <td>{{app.user.secretQuestion}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Réponse secrète :</th>
+                            <td>{{app.user.secretAnswer}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="col-lg-6 col-12 mt-4">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th scope="row">Genre :</th>
-                        {% if app.user.gender %}
-                            <td>{{app.user.gender}}</td>
-                        {% else %}
-                        <td>Non renseigné</td>
-                        {% endif %}
-                    </tr>
-                    <tr>
-                        <th scope="row">Numéro de téléphone :</th>
-                        {% if app.user.phoneNumber %}
-                            <td>{{app.user.phoneNumber}}</td>
-                        {% else %}
+            <div class="col-lg-6 col-12">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Genre :</th>
+                            {% if app.user.gender %}
+                                <td>{{app.user.gender}}</td>
+                            {% else %}
                             <td>Non renseigné</td>
-                        {% endif %}
-                    </tr>
-                    <tr>
-                        <th scope="row">Adresse / Ville</th>
-                        {% if app.user.location %}
-                            <td>{{app.user.location}}</td>
-                        {% else %}
-                            <td>Non renseigné</td>
-                        {% endif %}
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th scope="row">Numéro de<br> téléphone :</th>
+                            {% if app.user.phoneNumber %}
+                                <td>{{app.user.phoneNumber}}</td>
+                            {% else %}
+                                <td>Non renseigné</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th scope="row">Adresse / Ville</th>
+                            {% if app.user.location %}
+                                <td>{{app.user.location}}</td>
+                            {% else %}
+                                <td>Non renseigné</td>
+                            {% endif %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+        </div>
     </div>
-</div>
+</section>
 
+
+{% include 'footer.html.twig' %}
 {% endblock %}
