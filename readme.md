@@ -36,7 +36,7 @@ Enfin depuis la navbar quand le user est connecté, il a accès à un formulaire
 Ce formulaire est fonctionnel et sécurisé.
 
 
-## L'interface admin avec easyadmin ! https://img.icons8.com/?size=100&id=52233&format=png&color=000000
+## L'interface admin avec easyadmin !
 L'interface admin est accessible seulement par l'admin et donc sécurisé.
 Elle est accessible depuis la navbar quand l'admin est connecté.
 
