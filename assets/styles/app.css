@@ -124,6 +124,7 @@ ul{
         padding: 10px;
         border-radius: 10px;
         font-weight: 400;
+        text-decoration: none;
     }
     @media (max-width: 992px) {
         .a-nav{
