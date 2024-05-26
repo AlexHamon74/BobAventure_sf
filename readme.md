@@ -9,18 +9,14 @@ Une partie Enregistrement et connexion sont présentes afin d'ajouter plus tard 
 ## Les pages du site et leurs fonctionnalités 💻
 
 ### Page d'Accueil
-<!-- ![alt text](profil.PNG) -->
 La seule partie dynamique de la page d'accueil sont les 3 dernières actualités publiés avec un lien qui ammene à l'article en question détaillé.
 Cela est fonctionnel grâce à ce code :
 ```$articles = $articleRepository->findBy([], ['publishedAt' => 'DESC'], 3);```
-<!-- ![alt text](profil.PNG) -->
 
 ### Page actus
-<!-- ![alt text](profil.PNG) -->
 Cette page contient toutes les articles crées par l'admin avec un lien qui ammene à l'article en question détaillé.
 
-### Page Contact ✉️
-<!-- ![alt text](profil.PNG) -->
+### Page Contact
 Le formulaire de contact est fonctionnel et chaque champ est sécurisé.
 Le message sera consultable dans l'interface admin.
 
@@ -57,7 +53,7 @@ En cas de suppression d'article l'image relié à celui ci sera automatiquement 
 ## Difficultés rencontrées 🔨
 Le vrai difficulté pour moi a vraiment été l'uploads de plusieurs images.
 Après plusieurs jours a essayés et testés plusieurs choses je n'ai vraiment pas eu de succès.
-Ma procaine étape sera d'essayés de la faire avec le bundle [VichUploader](https://docs.framasoft.org/fr/grav/).
+Ma prochaine étape sera d'essayés de la faire avec le bundle [VichUploader](https://docs.framasoft.org/fr/grav/).
 
 ## Perpectives d'évolutions 🔜
 Afin de rendre le site terminée à 100% :
